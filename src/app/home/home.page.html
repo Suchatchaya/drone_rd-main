@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/home-4.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tong_color">
+  <ion-card>
+    <img src="./assets/images/logo.png" />
+    <ion-card-header>
+      <ion-card-title>{{this.cmd_user}}</ion-card-title>
+      <!-- <ion-card-subtitle>{{this.email}}</ion-card-subtitle> -->
+    </ion-card-header>
+    <ion-card-content>
+      <!-- List -->
+      <ion-row>
+        <ion-col size="1"> </ion-col>
+        <ion-col style="text-align: center">
+          <ion-button
+            color="primary"
+            (click)="goMission()"
+            expand="block"
+            class="ion-margin-top"
+          >
+            <ion-icon
+              src="./assets/svg/drone10.svg"
+              style="width: 24px; height: 24px"
+            >
+            </ion-icon
+            >&nbsp;&nbsp;Mission
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"> </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="1"> </ion-col>
+        <ion-col style="text-align: center">
+          <ion-button
+            color="primary"
+            (click)="goMission1()"
+            expand="block"
+            class="ion-margin-top"
+          >
+            <ion-icon
+              src="./assets/svg/drone10.svg"
+              style="width: 24px; height: 24px"
+            >
+            </ion-icon
+            >&nbsp;&nbsp;Mission 1
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"> </ion-col>
+      </ion-row>
+
+      <!-- New -->
+      <ion-row>
+        <ion-col size="1"> </ion-col>
+        <ion-col style="text-align: center">
+          <ion-button
+            expand="block"
+            color="primary"
+            (click)="goMission2()"
+            class="ion-margin-top"
+          >
+            <ion-icon
+              src="./assets/svg/drone04.svg"
+              style="width: 24px; height: 24px"
+            >
+            </ion-icon
+            >&nbsp;&nbsp;Mission 2
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"> </ion-col>
+      </ion-row>
+
+      <!-- Person -->
+      <ion-row>
+        <ion-col size="1"> </ion-col>
+        <ion-col style="text-align: center">
+          <ion-button
+            expand="block"
+            color="primary"
+            (click)="goMissionSetup()"
+            class="ion-margin-top"
+          >
+            <ion-icon
+              src="./assets/svg/drone05.svg"
+              style="width: 24px; height: 24px"
+            >
+            </ion-icon
+            >&nbsp;&nbsp;Mission Setup
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"> </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

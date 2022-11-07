@@ -1,0 +1,503 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/settings-4.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">CCR Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="nt_yellow">
+  <form novalidate #registerForm="ngForm">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Edit ID: {{this.searchID}}</ion-card-subtitle>
+        <ion-card-title>{{this.CCRprovince}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> TS: {{this.CCRtimestamp }} </ion-card-content>
+    </ion-card>
+
+    <!-- province -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >province เดิม: {{this.CCRprovince}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="province"
+                ngModel
+                minlength="3"
+                maxlength="100"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  slot="end"
+                  shape="round"
+                  (click)="edit_value('province',registerForm.value.province)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- area -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >area เดิม: {{this.CCRarea}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="area"
+                ngModel
+                minlength="3"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('area',registerForm.value.province)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- abbn-->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >abbn เดิม: {{this.CCRabbn}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="abbn"
+                ngModel
+                minlength="2"
+                maxlength="10"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('abbn',registerForm.value.abbn)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- site_ip-->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >site_ip เดิม: {{this.CCRsite_ip}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="site_ip"
+                ngModel
+                minlength="16"
+                maxlength="20"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('site_ip',registerForm.value.site_ip)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- gateway -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >gateway เดิม: {{this.CCRgateway}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="gateway"
+                ngModel
+                minlength="14"
+                maxlength="16"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('gateway',registerForm.value.gateway)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- dhcp -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >DHCP เดิม: {{this.CCRdhcp}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="dhcp"
+                ngModel
+                minlength="10"
+                maxlength="100"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('dhcp',registerForm.value.dhcp)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- name -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >ข้อมูลในระบบ: {{this.CCRname}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="name"
+                ngModel
+                minlength="3"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('name',registerForm.value.name)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- router -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >Router เดิม: {{this.CCRrouter}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="router"
+                ngModel
+                minlength="10"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('router',registerForm.value.router)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- vlan_name -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >Vlan เดิม: {{this.CCRvlan_name}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="vlan_name"
+                ngModel
+                minlength="4"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('vlan_name',registerForm.value.vlan_name)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- note -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >Note เดิม: {{this.CCRnote}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="note"
+                ngModel
+                minlength="3"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('note',registerForm.value.note)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- vpn-->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >VPN เดิม: {{this.CCRvpn}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="vpn"
+                ngModel
+                minlength="3"
+                maxlength="50"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('vpn',registerForm.value.vpn)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <!-- remark -->
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col
+              ><ion-text color="primary"
+                >Remark เดิม: {{this.CCRremark}}
+              </ion-text></ion-col
+            >
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-input
+                type="text"
+                placeholder="แก้ไขข้อมูล"
+                color="dark"
+                #province="ngModel"
+                name="remark"
+                ngModel
+                minlength="3"
+                maxlength="500"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col
+              ><div class="ion-text-end">
+                <ion-button
+                  shape="round"
+                  (click)="edit_value('remark',registerForm.value.remark)"
+                  >Update</ion-button
+                >
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

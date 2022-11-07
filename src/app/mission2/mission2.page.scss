@@ -1,0 +1,114 @@
+ion-card {
+  border-radius: 15px;
+  // margin-top: -6%;
+  // z-index: 3;
+  // position: absolute;
+  padding: 10px 5px;
+  // margin-left: 50px;
+  // width: 220px;
+  //background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.19);
+}
+
+ion-card-header {
+  border-radius: 50px;
+  //height: 30px;
+}
+
+ion-input {
+  --background: white;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  font-size: 15px;
+}
+
+ion-alert.select-alert {
+  --background: black !important;
+  button {
+    color: white !important;
+    font-size: 20px !important;
+  }
+  .sc-ion-alert-md {
+    color: white;
+  }
+}
+
+/* Set the width to the full container and center the content */
+ion-select {
+  width: 100%;
+  justify-content: center;
+}
+/* Set the flex in order to size the text width to its content */
+ion-select::part(placeholder),
+ion-select::part(text) {
+  flex: 0 0 auto;
+}
+/* Set the placeholder color and opacity */
+ion-select::part(placeholder) {
+  color: #20a08a;
+  opacity: 1;
+}
+/*
+   * Set the font of the first letter of the placeholder
+   * Shadow parts work with pseudo-elements, too!
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+   */
+ion-select::part(placeholder)::first-letter {
+  font-size: 24px;
+  font-weight: 500;
+}
+/* Set the text color */
+ion-select::part(text) {
+  color: #0248b0;
+}
+
+/* Set the icon color and opacity */
+ion-select::part(icon) {
+  color: #971e49;
+  opacity: 1;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+ion-item:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+ion-item:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+ion-item.item {
+  background-color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 4px;
+  .label {
+    width: 10%;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1.2em;
+  }
+}
+
+ion-item {
+  border-radius: 20px !important;
+  padding-left: 0px !important;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  border: 1px solid #ffffff;
+  border-bottom: 0px !important;
+  box-shadow: none !important;
+  color: var(--ion-color-primary) !important;
+}
+
+.myphoto {
+  img {
+    height: 30vh !important;
+    width: auto !important;
+    align-items: center;
+  }
+}
+
+

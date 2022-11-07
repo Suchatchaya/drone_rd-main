@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/controls-5.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">CCR List</ion-title>
+  </ion-toolbar>
+  <form novalidate #registerForm="ngForm">
+    <ion-item>
+      <ion-icon slot="start" name="filter-circle"></ion-icon>
+      <ion-input
+        type="text"
+        placeholder="Filter"
+        #chk_name="ngModel"
+        name="chk_name"
+        ngModel
+        (ionChange)="requestListNew(registerForm.value.chk_name)"
+      ></ion-input>
+      <ion-button slot="end" (click)="help()">Help</ion-button>
+    </ion-item>
+  </form>
+</ion-header>
+
+<ion-content  color="nt_yellow">
+  <!-- <ion-button (click)="toggleInfiniteScroll()" expand="block">
+    Toggle Infinite Scroll
+  </ion-button> -->
+
+  <ion-list *ngFor="let p of  this.dataList;let i = index">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="./assets/icon/cloud-data.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>Area: {{p.router}}</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div></div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-text-end">
+            <ion-button  size="small" (click)="goCcrMore(p)"
+              >More</ion-button
+            >
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

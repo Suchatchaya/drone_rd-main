@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/settings-4.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">Mission</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="nt_yellow">
+  <ion-card class="myphoto">
+    <img alt="Drone  Mission 1" src="./assets/images/drone_dji.png" />
+    <ion-card-header>
+      <ion-card-subtitle>{{this.mission_name}} </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>WP Start : Home</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item *ngFor="let p of  this.dataList;let i = index">
+    <br />
+    Way Point {{p.waypoint_no}} <br />
+    lat: {{p.latitude}} <br />
+    long:{{p.longitude}} <br />
+    speed:{{p.speed}} <br />
+    take_photo:{{p.take_photo}}<br />
+    start_record:{{p.start_record}} <br />
+    stop_record:{{p.stop_record}}<br />
+    gimbal_pitch:{{p.gimbal_pitch}}<br /><br />
+  </ion-item>
+
+  <ion-card class="myphoto">
+    <ion-card-content>
+      <ion-item>
+        <ion-label>WP End : Home</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <form novalidate #registerForm="ngForm">
+    <div class="ion-text-center">Add Way Point : {{this.count_data}}</div>
+    <ion-list>
+      <ion-item>
+        <ion-label>Lat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+        <ion-input
+          type="text"
+          placeholder="latitude"
+          color="dark"
+          #province="ngModel"
+          name="lat"
+          ngModel
+          minlength="1"
+          maxlength="20"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Long &nbsp;&nbsp;</ion-label>
+        <ion-input
+          type="text"
+          placeholder="longitude"
+          color="dark"
+          #province="ngModel"
+          name="long"
+          ngModel
+          minlength="1"
+          maxlength="20"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Speed</ion-label>
+        <ion-input
+          type="number"
+          placeholder="KM/H"
+          color="dark"
+          #speed="ngModel"
+          name="speed"
+          ngModel
+          min="1"
+          max="5"
+          required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Hight&nbsp;</ion-label>
+        <ion-input
+          type="number"
+          placeholder="Unit: Meter"
+          color="dark"
+          #hight="ngModel"
+          name="hight"
+          ngModel
+          min="1"
+          max="5"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Stay&nbsp;&nbsp;</ion-label>
+        <ion-input
+          type="number"
+          placeholder="Unit: Minute"
+          color="dark"
+          #stay="ngModel"
+          name="stay"
+          ngModel
+          min="1"
+          max="5"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-row>
+      <ion-col size="1"> </ion-col>
+      <ion-col style="text-align: center">
+        <ion-button
+          shape="round"
+          color="primary"
+          (click)="setDetail(registerForm.value)"
+          class="ion-margin-top"
+          >&nbsp;&nbsp;
+          <ion-icon
+            src="./assets/svg/drone05.svg"
+            style="width: 24px; height: 24px"
+          >
+          </ion-icon
+          >&nbsp;&nbsp;Add&nbsp;&nbsp;
+        </ion-button>
+      </ion-col>
+      <ion-col size="1"> </ion-col>
+    </ion-row>
+  </form>
+
+  <ion-row>
+    <ion-col size="1"> </ion-col>
+    <ion-col style="text-align: center">
+      <ion-button
+        shape="round"
+        color="primary"
+        (click)="next()"
+        class="ion-margin-top"
+        >&nbsp;&nbsp;
+        <ion-icon
+          src="./assets/svg/drone05.svg"
+          style="width: 24px; height: 24px"
+        >
+        </ion-icon
+        >&nbsp;&nbsp;Next&nbsp;&nbsp;
+      </ion-button>
+    </ion-col>
+    <ion-col size="1"> </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/settings-4.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">Mission 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="nt_yellow">
+  <ion-card class="myphoto">
+    <img alt="Drone  Mission 1" src="./assets/images/drone_dji.png" />
+    <ion-card-header>
+      <ion-card-subtitle>Drone Mission </ion-card-subtitle>
+      <ion-card-title>Way Point</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>WP Start : Home</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>WP End : Home</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Add Way Point </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Lat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-label>
+          <ion-input placeholder="14.xxxxxxx"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Long &nbsp;&nbsp;</ion-label>
+          <ion-input placeholder="100.xxxxxx"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-row>
+        <ion-col size="1"> </ion-col>
+        <ion-col style="text-align: center">
+          <ion-button
+            shape="round"
+            color="primary"
+            (click)="start()"
+            class="ion-margin-top"
+            >&nbsp;&nbsp;
+            <ion-icon
+              src="./assets/svg/drone05.svg"
+              style="width: 24px; height: 24px"
+            >
+            </ion-icon
+            >&nbsp;&nbsp;Add&nbsp;&nbsp;
+          </ion-button>
+        </ion-col>
+        <ion-col size="1"> </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="1"> </ion-col>
+    <ion-col style="text-align: center">
+      <ion-button
+        shape="round"
+        color="primary"
+        (click)="start()"
+        class="ion-margin-top"
+        >&nbsp;&nbsp;
+        <ion-icon
+          src="./assets/svg/drone05.svg"
+          style="width: 24px; height: 24px"
+        >
+        </ion-icon
+        >&nbsp;&nbsp;Start&nbsp;&nbsp;
+      </ion-button>
+    </ion-col>
+    <ion-col size="1"> </ion-col>
+  </ion-row>
+
+
+</ion-content>

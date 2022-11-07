@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="./assets/icon/settings-4.png" style="width: 28px; height: 28px" />
+    <ion-title></ion-title>
+    <ion-title slot="end">Mission 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="nt_yellow">
+  <ion-card>
+    <img alt="Drone  Mission 1" src="./assets/images/mission1.png" />
+    <ion-card-header>
+      <ion-card-subtitle>Mission 1 </ion-card-subtitle>
+      <ion-card-title>Command Detail</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      1. กดปุ่ม Mission จาก Mobile App --- > Back END
+      <br />
+      2. Back End --- > MSDK - Map CMD to library kotlin <br />
+      3. MSDK สั่ง Exec. <br />
+      4-7 Flighting Operation
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="1"> </ion-col>
+    <ion-col style="text-align: center">
+      <ion-button
+        shape="round"
+        color="primary"
+        (click)="start()"
+        class="ion-margin-top"
+      >&nbsp;&nbsp;
+        <ion-icon
+          src="./assets/svg/drone05.svg"
+          style="width: 24px; height: 24px"
+        >
+        </ion-icon
+        >&nbsp;&nbsp;Start&nbsp;&nbsp;
+      </ion-button>
+    </ion-col>
+    <ion-col size="1"> </ion-col>
+  </ion-row>
+</ion-content>
