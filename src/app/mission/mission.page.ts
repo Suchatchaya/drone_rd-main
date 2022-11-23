@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { GoogleMap } from '@capacitor/google-maps/';
+import { GoogleMap } from '@capacitor/google-maps';
 import {
   ToastController,
   NavController,
@@ -12,6 +12,15 @@ import { element } from 'protractor';
   selector: 'app-mission',
   templateUrl: './mission.page.html',
   styleUrls: ['./mission.page.scss'],
+  styles: [
+    `
+      capacitor-google-map {
+        display: inline-block;
+        width: 275px;
+        height: 400px;
+      }
+    `,
+  ],
 })
 export class MissionPage implements OnInit {
   @ViewChild('map') mapRef: ElementRef;
@@ -30,19 +39,21 @@ export class MissionPage implements OnInit {
     this.navCtrl.navigateForward('/mission-submit');
   }
 
-  ionViewDidEnter() {}
+  ionViewDidEnter() {
+    this.createMap();
+  }
 
   async createMap() {
     this.map = await GoogleMap.create({
-      id: 'map',
+      id: 'my-map',
       apiKey: 'AIzaSyAlQCXgab7H0o63Psf0tK69Srpoxpl_snM',
       element: this.mapRef.nativeElement,
       config: {
         center: {
-          lat: 33.6,
-          lng: -117.9,
+          lat: 20.070293,
+          lng: 99.604024,
         },
-        zoom: 8,
+        zoom: 15,
       },
     });
   }
