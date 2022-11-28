@@ -18,7 +18,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class CcrListPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-  public response_data: any;
+  public responseData: any;
   public dataList: any[] = [];
   public dataLength: number = 0;
   public dataTotal: number = 0;
@@ -79,11 +79,11 @@ export class CcrListPage implements OnInit {
     this.sub = this.dataService
       .ccrList(chk_name, this.page_start, this.page_limit)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.dataList.concat(this.response_data.data_list);
-          this.dataLength = this.response_data.data_start;
-          this.dataTotal = this.response_data.total_data;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.dataList = this.dataList.concat(this.responseData.data_list);
+          this.dataLength = this.responseData.data_start;
+          this.dataTotal = this.responseData.total_data;
         }
         else {
           //todo end of data
@@ -98,11 +98,11 @@ export class CcrListPage implements OnInit {
     this.sub = this.dataService
       .ccrList(chk_name, this.page_start, this.page_limit)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.dataList.concat(this.response_data.data_list);
-          this.dataLength = this.response_data.data_start;
-          this.dataTotal = this.response_data.total_data;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.dataList = this.dataList.concat(this.responseData.data_list);
+          this.dataLength = this.responseData.data_start;
+          this.dataTotal = this.responseData.total_data;
         }
         else {
           //todo end of data

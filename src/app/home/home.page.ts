@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 })
 export class HomePage implements OnInit {
   //public username: string = '';
-  public cmd_user: string;
+  public cmdUser: string;
 
 
   constructor(
@@ -37,12 +37,12 @@ export class HomePage implements OnInit {
     // todo enable side menu
     this.menuCtrl.enable(true);
 
-    this.getData('cmd_user');
+    this.getData('cmdUser');
   }
 
   async getData(Key: string) {
     let Data = await Preferences.get({ key: Key });
-    this.cmd_user = Data.value;
+    this.cmdUser = Data.value;
     //console.log(Key + " : " + Data.value);
     //alert(Key + " : " + Data.value);
   }

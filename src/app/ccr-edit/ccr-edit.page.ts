@@ -19,7 +19,7 @@ import { MenuController } from '@ionic/angular';
 export class CcrEditPage implements OnInit {
   sub: Subscription;
   public searchID: number;
-  public response_data: any;
+  public responseData: any;
   public CCRprovince: string;
   public CCRarea: string;
   public CCRabbn: string;
@@ -57,23 +57,23 @@ export class CcrEditPage implements OnInit {
     this.sub = this.dataService
       .ccrID(this.searchID)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.CCRprovince = this.response_data.province;
-          this.CCRarea = this.response_data.area;
-          this.CCRabbn = this.response_data.abbn;
-          this.CCRsite_ip = this.response_data.site_ip;
-          this.CCRgateway = this.response_data.gateway;
-          this.CCRdhcp = this.response_data.dhcp;
-          this.CCRname = this.response_data.name;
-          this.CCRrouter = this.response_data.router;
-          this.CCRvlan_name = this.response_data.vlan_name;
-          this.CCRnote = this.response_data.note;
-          this.CCRvpn = this.response_data.vpn;
-          this.CCRremark = this.response_data.remark;
-          this.CCRtimestamp = this.response_data.timestamp;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.CCRprovince = this.responseData.province;
+          this.CCRarea = this.responseData.area;
+          this.CCRabbn = this.responseData.abbn;
+          this.CCRsite_ip = this.responseData.site_ip;
+          this.CCRgateway = this.responseData.gateway;
+          this.CCRdhcp = this.responseData.dhcp;
+          this.CCRname = this.responseData.name;
+          this.CCRrouter = this.responseData.router;
+          this.CCRvlan_name = this.responseData.vlan_name;
+          this.CCRnote = this.responseData.note;
+          this.CCRvpn = this.responseData.vpn;
+          this.CCRremark = this.responseData.remark;
+          this.CCRtimestamp = this.responseData.timestamp;
           // alert('OK');
-          //console.log("Data is: "+this.response_data.chk_name);
+          //console.log("Data is: "+this.responseData.chk_name);
         }
         else {
           //todo end of data
@@ -88,12 +88,12 @@ export class CcrEditPage implements OnInit {
     this.sub = this.dataService
       .ccrEdit(this.searchID, ccr_name, ccr_value)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.update == 'success') {
+        this.responseData = response;
+        if (this.responseData.update == 'success') {
           this.requestData();
         }
         else {
-          alert(this.response_data.update);
+          alert(this.responseData.update);
         }
       })
   }

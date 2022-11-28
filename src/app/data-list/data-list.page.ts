@@ -18,7 +18,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class DataListPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-  public response_data: any;
+  public responseData: any;
   public dataList: any[] = [];
   public dataLength: number = 0;
   public dataTotal: number = 0;
@@ -128,11 +128,11 @@ export class DataListPage implements OnInit {
     this.sub = this.dataService
       .dataList(chk_name, this.page_start, this.page_limit)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.dataList.concat(this.response_data.data_list);
-          this.dataLength = this.response_data.data_start;
-          this.dataTotal = this.response_data.total_data;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.dataList = this.dataList.concat(this.responseData.data_list);
+          this.dataLength = this.responseData.data_start;
+          this.dataTotal = this.responseData.total_data;
         }
         else {
           //todo end of data
@@ -147,11 +147,11 @@ export class DataListPage implements OnInit {
     this.sub = this.dataService
       .dataList(chk_name, this.page_start, this.page_limit)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.dataList.concat(this.response_data.data_list);
-          this.dataLength = this.response_data.data_start;
-          this.dataTotal = this.response_data.total_data;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.dataList = this.dataList.concat(this.responseData.data_list);
+          this.dataLength = this.responseData.data_start;
+          this.dataTotal = this.responseData.total_data;
         }
         else {
           //todo end of data
@@ -204,8 +204,8 @@ export class DataListPage implements OnInit {
     this.sub = this.dataService
       .ccrDel(id)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if ((this.response_data.result == 'success')&&(this.response_data.delete =='success')) {
+        this.responseData = response;
+        if ((this.responseData.result == 'success')&&(this.responseData.delete =='success')) {
           this.pageAlert("ลบข้อมูลสำเร็จ","");
           this.requestListNew('');
         }

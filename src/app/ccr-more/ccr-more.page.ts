@@ -19,7 +19,7 @@ import { MenuController } from '@ionic/angular';
 export class CcrMorePage implements OnInit {
   sub: Subscription;
   public searchText: string = '';
-  public response_data: any;
+  public responseData: any;
   public dataList: any[] = [];
 
   constructor(
@@ -44,11 +44,11 @@ export class CcrMorePage implements OnInit {
     this.sub = this.dataService
       .ccrMore(this.searchText)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.response_data.data_list;
+        this.responseData = response;
+        if (this.responseData.result == 'success') {
+          this.dataList = this.responseData.data_list;
           // alert('OK');
-          //console.log("Data is: "+this.response_data.chk_name);
+          //console.log("Data is: "+this.responseData.chk_name);
         }
         else {
           //todo end of data

@@ -8,6 +8,8 @@ import { MissionShowPageRoutingModule } from './mission-show-routing.module';
 
 import { MissionShowPage } from './mission-show.page';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { MissionShowPage } from './mission-show.page';
     IonicModule,
     MissionShowPageRoutingModule
   ],
-  declarations: [MissionShowPage]
+  declarations: [MissionShowPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MissionShowPageModule {}

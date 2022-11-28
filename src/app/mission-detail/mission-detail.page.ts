@@ -18,15 +18,15 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./mission-detail.page.scss'],
 })
 export class MissionDetailPage implements OnInit {
-  public mission_id: number = 2;
-  public mission_name: string = "test name";
+  public missionId: 2;
+  public missionName: 'test name';
   //public allMission: any = 'Your Mission';
   public dateTime: any;
   sub: Subscription;
-  public response_data: any;
+  public responseData: any;
   public dataList: any[] = [];
-  public cmd_user: string;
-  public count_data: number = 0;
+  public cmdUser: string;
+  public countData: 0;
 
   constructor(private navCtrl: NavController,
     private dataService: DataService,
@@ -37,8 +37,8 @@ export class MissionDetailPage implements OnInit {
     public menuCtrl: MenuController
   ) {
     const currState = this.router.getCurrentNavigation().extras.state;
-    this.mission_id = currState ? currState.mission_id : null;
-    this.mission_name = currState ? currState.mission_name : null;
+    this.missionId = currState ? currState.missionId : null;
+    this.missionName = currState ? currState.missionName : null;
   }
 
   ngOnInit() {
@@ -47,13 +47,13 @@ export class MissionDetailPage implements OnInit {
 
   loadDetail() {
     this.sub = this.dataService
-      .missionLoad(this.mission_id)
+      .missionLoad(this.missionId)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.result == 'success') {
-          this.dataList = this.response_data.data_list;
-          this.count_data = this.response_data.count_data;
-          this.count_data++;
+        this.responseData = response;
+        if (this.responseData.result === 'success') {
+          this.dataList = this.responseData.data_list;
+          this.countData = this.responseData.countData;
+          this.countData++;
           //alert('OK'+  dataInput.latitude);
         }
         else {
@@ -61,29 +61,33 @@ export class MissionDetailPage implements OnInit {
           alert('Can not insert Way-Point');
 
         }
-      })
+      });
+  }
+
+  next(){
+
   }
 
 
   setDetail(dataInput: any) {
-    // console.log('all data : ' + this.mission_name,
-    //   this.mission_id,
+    // console.log('all data : ' + this.missionName,
+    //   this.missionId,
     //   dataInput.lat,
     //   dataInput.long,
     //   dataInput.speed,
     //   dataInput.hight,
     //   dataInput.stay);
     this.sub = this.dataService
-      .missionDetail(this.mission_name,
-        this.mission_id,
+      .missionDetail(this.missionName,
+        this.missionId,
         dataInput.lat,
         dataInput.long,
         dataInput.speed,
         dataInput.hight,
         dataInput.stay)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.insert == 'success') {
+        this.responseData = response;
+        if (this.responseData.insert === 'success') {
           //alert('OK'+  dataInput.latitude);
 
         }
@@ -92,7 +96,7 @@ export class MissionDetailPage implements OnInit {
           alert('Can not insert Way-Point');
 
         }
-      })
+      });
   }
 
 

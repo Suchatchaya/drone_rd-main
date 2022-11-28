@@ -21,9 +21,9 @@ export class MissionSetupPage implements OnInit {
   public dateTime: any;
   sub: Subscription;
   public searchText: string = '';
-  public response_data: any;
+  public responseData: any;
   public dataList: any[] = [];
-  public cmd_user:string;
+  public cmdUser:string;
 
 
   constructor(
@@ -38,18 +38,18 @@ export class MissionSetupPage implements OnInit {
 
   ngOnInit() {
     this.dateTime = new Date();
-    this. getData( "cmd_user" );
+    this. getData( "cmdUser" );
   }
 
-  setName(mission_name: string) {
-    let cmd_user = "youtapong";
+  setName(missionName: string) {
+    let cmdUser = "youtapong";
     this.sub = this.dataService
-      .missionSetup(mission_name, cmd_user)
+      .missionSetup(missionName, cmdUser)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.insert == 'success') {
+        this.responseData = response;
+        if (this.responseData.insert == 'success') {
           //alert('OK');
-          this.goMission_detail(this.response_data.mission_id, mission_name);
+          this.goMission_detail(this.responseData.missionId, missionName);
         }
         else {
           //todo end of data
@@ -59,11 +59,11 @@ export class MissionSetupPage implements OnInit {
       })
   }
 
-  goMission_detail(id: number, mission_name: string) {
+  goMission_detail(id: number, missionName: string) {
     this.navCtrl.navigateForward('/mission-detail', {
       state: {
-        mission_id: id,
-        mission_name: mission_name
+        missionId: id,
+        missionName: missionName
       },
     })
   }
@@ -71,7 +71,7 @@ export class MissionSetupPage implements OnInit {
 
   async getData(Key: string) {
     let Data = await Preferences.get({ key: Key });
-    this.cmd_user  = Data.value;
+    this.cmdUser  = Data.value;
     //console.log(Key + " : " + Data.value);
     //alert(Key + " : " + Data.value);
   }

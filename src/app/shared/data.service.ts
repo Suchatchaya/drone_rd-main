@@ -39,10 +39,10 @@ export class DataService {
 
 
   missionLoad(
-    mission_id: number,
+    missionId: number,
   ): Observable<any> {
     const body = {
-      mission_id: mission_id,
+      missionId: missionId,
     };
     const myHeader = {
       'Content-Type': 'application/json',
@@ -55,8 +55,8 @@ export class DataService {
 
 
 
-  missionDetail(cmd_user: string,
-    mission_id: number,
+  missionDetail(cmdUser: string,
+    missionId: number,
     latitude: string,
     longitude: string,
     speed: number,
@@ -64,8 +64,8 @@ export class DataService {
     stay: number,
   ): Observable<any> {
     const body = {
-      cmd_user: cmd_user,
-      mission_id: mission_id,
+      cmdUser: cmdUser,
+      missionId: missionId,
       latitude: latitude,
       longitude: longitude,
       speed: speed,
@@ -96,10 +96,10 @@ export class DataService {
   }
 
 
-  missionSetup(mission_name: string, cmd_user: string): Observable<any> {
+  missionSetup(missionName: string, cmdUser: string): Observable<any> {
     const body = {
-      mission_name: mission_name,
-      cmd_user: cmd_user,
+      missionName: missionName,
+      cmdUser: cmdUser,
     };
     const myHeader = {
       'Content-Type': 'application/json',

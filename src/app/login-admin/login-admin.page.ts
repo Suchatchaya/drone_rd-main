@@ -74,7 +74,7 @@ export class LoginAdminPage implements OnInit {
         //console.log("response.message : "+response.message);
         if (response.message == 'success') {
           this.username = loginForm.username;
-          this.setData("cmd_user", this.username);
+          this.setData("cmdUser", this.username);
           this.navCtrl.navigateRoot("home");
 
         } else {

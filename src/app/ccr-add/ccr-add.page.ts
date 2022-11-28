@@ -18,7 +18,7 @@ import { MenuController } from '@ionic/angular';
 export class CcrAddPage implements OnInit {
   sub: Subscription;
   public lastID: number;
-  public response_data: any;
+  public responseData: any;
 
   constructor(private navCtrl: NavController,
     private dataService: DataService,
@@ -37,14 +37,14 @@ export class CcrAddPage implements OnInit {
     this.sub = this.dataService
       .ccrAdd(ccr_value)
       .subscribe(async (response: any) => {
-        this.response_data = response;
-        if (this.response_data.update == 'success') {
-          this.lastID = this.response_data.last_id;
+        this.responseData = response;
+        if (this.responseData.update == 'success') {
+          this.lastID = this.responseData.last_id;
           //alert('this.lastID + ' + this.lastID);
           this.goCcrEdit(this.lastID);
         }
         else {
-          alert(this.response_data.update);
+          alert(this.responseData.update);
         }
       })
   }

@@ -28,4 +28,8 @@ export class MissionSubmitPage implements OnInit {
     this.navCtrl.navigateForward('/mission-show');
   }
 
+  backtoMissionPage() {
+    this.navCtrl.navigateForward('/mission');
+  }
+
 }
