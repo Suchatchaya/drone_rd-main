@@ -110,11 +110,6 @@ export class DataService {
       .pipe(catchError(this.handleError));
   }
 
-
-
-
-
-
   loginAdmin(username: string, password: string): Observable<any> {
     const body = {
       username: username,

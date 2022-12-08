@@ -22,10 +22,7 @@
     "@capacitor/android": "4.3.0",
     "@capacitor/app": "4.0.1",
     "@capacitor/core": "4.3.0",
-<<<<<<< HEAD
     "@capacitor/geolocation": "^4.0.1",
-=======
->>>>>>> 27958cfbdf10bfbcc35bf53923c8465e2f39fc75
     "@capacitor/google-maps": "^4.3.1",
     "@capacitor/haptics": "4.0.1",
     "@capacitor/keyboard": "4.0.1",

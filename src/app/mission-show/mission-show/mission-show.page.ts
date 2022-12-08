@@ -44,23 +44,23 @@ export class MissionShowPage implements OnInit {
   ngOnInit() {
   }
 
-  // countDown() {
-  //   const intervalId = setInterval(() => {
-  //     this.counter = this.counter - 1;
-  //     const numCheck = this.counter % 5;
-  //     if (numCheck === 0) {
-  //       this.missionCheck();
-  //       //alert("do : " + this.counter);
+  countDown() {
+    const intervalId = setInterval(() => {
+      this.counter = this.counter - 1;
+      const numCheck = this.counter % 5;
+      if (numCheck === 0) {
+        this.missionCheck();
+        //alert("do : " + this.counter);
 
-  //     }
-  //     if (this.counter === 0) {
-  //       clearInterval(intervalId);
-  //     }
+      }
+      if (this.counter === 0) {
+        clearInterval(intervalId);
+      }
 
 
-  //   }, 1000);
+    }, 1000);
 
-  // }
+  }
 
   ionViewDidEnter() {
     this.createMap();
@@ -143,22 +143,22 @@ export class MissionShowPage implements OnInit {
     await this.map.addMarkers(markers);
   }
 
-  // missionCheck() {
-  //   this.sub = this.dataService
-  //     .missionStatusCheck(this.missionId, this.droneName)
-  //     .subscribe(async (response: any) => {
-  //       this.responseData = response;
-  //       if (this.responseData.result === 'success') {
-  //         //alert('OK');
-  //         this.latitudeCurrent = this.responseData.latitude_current;
-  //         this.longitudeCurrent = this.responseData.longitude_current;
-  //       }
-  //       else {
-  //         //todo end of data
-  //         alert('Can Read Drone Status');
+  missionCheck() {
+    this.sub = this.dataService
+      .missionStatusCheck(this.missionId, this.droneName)
+      .subscribe(async (response: any) => {
+        this.responseData = response;
+        if (this.responseData.result === 'success') {
+          //alert('OK');
+          this.latitudeCurrent = this.responseData.latitude_current;
+          this.longitudeCurrent = this.responseData.longitude_current;
+        }
+        else {
+          //todo end of data
+          alert('Can Read Drone Status');
 
-  //       }
-  //     });
-  // }
+        }
+      });
+  }
 
 }
