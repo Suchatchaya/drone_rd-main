@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Mission1', url: '/mission1', icon: 'paper-plane' },
     { title: 'Mission2', url: '/mission2', icon: 'paper-plane' },
     { title: 'mission-setup', url: '/mission3', icon: 'paper-plane' },
+    { title: 'mission-show', url: '/mission-show', icon: 'paper-plane' },
     { title: 'Log out', url: '/login-admin', icon: 'walk' },
   ];
  // public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

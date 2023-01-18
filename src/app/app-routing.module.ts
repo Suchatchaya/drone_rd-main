@@ -66,7 +66,11 @@ const routes: Routes = [
   {
     path: 'mission-show',
     loadChildren: () => import('./mission-show/mission-show.module').then( m => m.MissionShowPageModule)
+  },  {
+    path: 'maponly',
+    loadChildren: () => import('./maponly/maponly.module').then( m => m.MaponlyPageModule)
   }
+
 ];
 
 @NgModule({

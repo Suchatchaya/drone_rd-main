@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
   }
 
   async getData(Key: string) {
-    let Data = await Preferences.get({ key: Key });
+    const Data = await Preferences.get({ key: Key });
     this.cmdUser = Data.value;
     //console.log(Key + " : " + Data.value);
     //alert(Key + " : " + Data.value);
@@ -65,6 +65,10 @@ export class HomePage implements OnInit {
 
   goMission() {
     this.navCtrl.navigateForward('/mission');
+  }
+
+  goMissionShow() {
+    this.navCtrl.navigateForward('/mission-show');
   }
 
 }
